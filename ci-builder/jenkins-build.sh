@@ -19,7 +19,7 @@ if [ "${DOCKER_BASE_IMG}" != "" ] ; then
   sed -i "s;.*FROM .*;FROM ${DOCKER_BASE_IMG};" ./Dockerfile
 fi
 
-# BUild the new app server
+# Build the new app server
 docker build -t dd/jenkins:latest . 
 
 LATEST_IMG=`docker images | grep "dd/jenkins" | grep "latest" | awk '{print $3}'`
