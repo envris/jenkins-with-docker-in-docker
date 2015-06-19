@@ -10,7 +10,7 @@ sleep 6s
 # Pull latest base images (purely for cache, naming does not matter, just hashes)
 docker pull ${DOCKER_REG_PREFIX}/jenkins:latest
 
-# cd and cont.
+# cd and continue.
 cd /builder/
 echo -e "ENV BUILD_DETAILS ${GIT_COMMIT}_${BUILD_NUMBER}" >> ./Dockerfile
 echo -e "BUILD_DETAILS:\n  GIT_COMMIT: ${GIT_COMMIT}\n  BUILD_NUMBER: ${BUILD_NUMBER}\n" > ./BUILD_DETAILS
