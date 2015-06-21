@@ -12,6 +12,7 @@ docker pull ${DOCKER_REG_PREFIX}/jenkins:latest
 
 # cd and continue.
 cd /builder/
+# perhaps should add a dockerfile with these bits which can be overlayed with.
 echo -e "ENV BUILD_DETAILS ${GIT_COMMIT}_${BUILD_NUMBER}" >> ./Dockerfile
 echo -e "BUILD_DETAILS:\n  GIT_COMMIT: ${GIT_COMMIT}\n  BUILD_NUMBER: ${BUILD_NUMBER}\n" > ./BUILD_DETAILS
 echo -e "ADD ./BUILD_DETAILS /etc/BUILD_DETAILS" >> ./Dockerfile
